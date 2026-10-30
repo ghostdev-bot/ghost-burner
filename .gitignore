@@ -1,0 +1,22 @@
+# deps / builds
+node_modules/
+dist/
+site-*/
+target/
+*.so
+# secrets: never commit
+.env
+.env.*
+!.env.example
+*keypair*.json
+id.json
+wallets/
+test-wallets/
+keys/
+secrets/
+# misc
+*.log
+.DS_Store
+backup-*/
+*.mp4
+site/

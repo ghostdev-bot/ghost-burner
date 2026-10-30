@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ghost Burner">
+  <defs>
+    <linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5cf2a6"/><stop offset="1" stop-color="#1fb873"/></linearGradient>
+    <linearGradient id="gf" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#3ee08f"/><stop offset=".6" stop-color="#c8ff6a"/><stop offset="1" stop-color="#fff3a0"/></linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#07100c"/>
+  <path d="M32 3c3 5 8 7 8 13 0 2.6-1.2 4.6-3 5.8.6-3-1.4-5-3-6.3 0 3-2 4.4-3.6 5.6C29 22.6 27 21 27 18c0-6 5-8 5-15z" fill="url(#gf)"/>
+  <path d="M32 19c-10 0-17 7.4-17 17.6V58l4.8-3.8 4.2 3.8 4-3.8 4 3.8 4-3.8 4 3.8 4.2-3.8L49 58V36.6C49 26.4 42 19 32 19z" fill="url(#gb)"/>
+  <ellipse cx="26" cy="36" rx="3.2" ry="4.2" fill="#07100c"/>
+  <ellipse cx="38" cy="36" rx="3.2" ry="4.2" fill="#07100c"/>
+  <path d="M27 46c3 2.4 7 2.4 10 0" fill="none" stroke="#07100c" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

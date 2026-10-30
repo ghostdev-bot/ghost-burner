@@ -1,0 +1,23 @@
+{
+  "name": "ghost-burner",
+  "version": "1.0.0",
+  "description": "Ghost Burner: close empty Solana token accounts and reclaim rent",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@solana/spl-token": "^0.4.15",
+    "@solana/web3.js": "^1.99.0",
+    "@wallet-standard/app": "^1.1.0",
+    "buffer": "^6.0.3"
+  },
+  "devDependencies": {
+    "vite": "^5.4.21"
+  }
+}

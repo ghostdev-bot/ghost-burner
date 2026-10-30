@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src https: wss:; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>How it works · Ghost Burner</title>
+<meta name="description" content="What Ghost Burner does, step by step, and exactly where the 2% fee goes with and without a referral link.">
+<meta name="theme-color" content="#050807">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ghost Burner">
+<meta name="application-name" content="Ghost Burner">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="./" data-keepref aria-label="Ghost Burner home"><img src="/assets/logo.svg" width="30" height="30" alt=""> GHOST<b>BURNER</b></a>
+    <div class="ptabs" role="navigation" aria-label="Pages">
+      <a class="ptab" data-keepref href="./">Home</a>
+      <a class="ptab" data-keepref href="./refer.html">Refer</a>
+      <a class="ptab on" aria-current="page" data-keepref href="./how.html">How it works</a>
+      <details class="more">
+        <summary class="ptab" aria-label="More Ghost projects">More</summary>
+        <div class="menu">
+          <a href="https://ghostlinks.surge.sh" target="_blank" rel="noopener"><b>Ghost Links</b><small>ghostlinks.surge.sh</small></a>
+          <a href="https://ghostscreener.surge.sh" target="_blank" rel="noopener"><b>Ghost Screener</b><small>ghostscreener.surge.sh</small></a>
+          <a href="https://ghostmarkets.surge.sh" target="_blank" rel="noopener"><b>Ghost Markets</b><small>ghostmarkets.surge.sh</small></a>
+          <a href="https://ghostdev.surge.sh" target="_blank" rel="noopener"><b>$GHOSTDEV</b><small>ghostdev.surge.sh</small></a>
+          <a href="https://x.com/GrokBotreal" target="_blank" rel="noopener"><b>X</b><small>@GrokBotreal</small></a>
+        </div>
+      </details>
+    </div>
+    <div class="navr">
+      <a class="btn" href="./" data-keepref>Start burning</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="rf-hero">
+    <div>
+      <p class="kicker">// how it works</p>
+      <h1>What Ghost Burner does.<br><span>And where the 2% goes.</span></h1>
+      <p class="lead">Every Solana token account holds a small refundable SOL deposit (rent, about 0.00204 SOL). Ghost Burner finds the token accounts you no longer need, closes them, and sends that rent back to your wallet.</p>
+      <ul class="facts">
+        <li><b>Empty accounts are the easy win.</b> They hold no tokens, so closing them only refunds rent.</li>
+        <li><b>Burning is opt-in.</b> Junk tokens and standard NFTs are burned only if you tick them yourself.</li>
+        <li><b>Simulated before you sign.</b> The review screen shows the exact SOL back, fee and net.</li>
+        <li><b>Your wallet is the only signer.</b> No seed phrase, no approvals, no delegation.</li>
+      </ul>
+    </div>
+    <div class="howto">
+      <div class="step"><i>1</i><div><b>Connect</b><span>Phantom, Solflare, Backpack or any Wallet Standard wallet.</span></div></div>
+      <div class="step"><i>2</i><div><b>Scan</b><span>Ghost Burner reads your SPL Token and Token-2022 accounts from the chain.</span></div></div>
+      <div class="step"><i>3</i><div><b>Review</b><span>You see exactly what gets closed or burned, the SOL back, the fee and what you net.</span></div></div>
+      <div class="step"><i>4</i><div><b>Sign</b><span>Batched transactions, simulated first. The rent lands in your wallet.</span></div></div>
+    </div>
+  </section>
+
+  <div class="rf-grid">
+    <section class="card" id="fees">
+      <h2>Where the 2% fee goes</h2>
+      <div class="split">
+        <div><span>Without a referral link</span><span>1% $GHOSTDEV treasury · 1% BOBO buy</span></div>
+        <div><span>With a referral link</span><span>0.5% treasury · <b>0.5% referrer</b> · 1% BOBO buy</span></div>
+      </div>
+      <p class="mut xs">You pay 2% of the SOL rent you reclaim either way. A referral only moves half of the treasury's share to the person who shared the link. Each part is a normal SOL transfer inside the same transaction, rounded down to the lamport, and never taken from your tokens.</p>
+      <p class="mut xs">Example: closing 10 empty accounts frees about 0.0204 SOL. The fee is about 0.000408 SOL: 0.000204 to the treasury and 0.000204 to the BOBO buy, or with a referral 0.000102 treasury, 0.000102 referrer, 0.000204 BOBO buy. You keep about 0.019992 SOL, minus Solana's network fee (about 0.000005 SOL per transaction).</p>
+    </section>
+    <section class="card">
+      <h2>What gets closed or burned</h2>
+      <ul class="facts" style="margin:6px 0 0">
+        <li><b>Empty token accounts.</b> Pre-selected. Closing refunds the rent to you.</li>
+        <li><b>Tokens you choose to burn.</b> Destroyed permanently, then the account is closed.</li>
+        <li><b>Standard NFTs you choose to burn.</b> Their metadata and edition rent comes back too.</li>
+        <li><b>Never touched:</b> wrapped SOL, frozen accounts, compressed or programmable NFTs, and accounts someone else controls. These show under Excluded.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card">
+    <h2>Referral links</h2>
+    <p class="mut" style="margin:0 0 8px">A link looks like <code>ghostburner.surge.sh/?ref=Wallet</code>. The first valid link you open is remembered in your browser for 30 days, and the burn screen shows who referred you. Your own wallet and the fee wallets can't be referrers. If the referrer's wallet can't receive a small payment yet (a brand-new wallet needs about 0.00065 SOL to exist), that part goes to the treasury instead, so the total stays 2%.</p>
+    <div class="row" style="justify-content:flex-start;flex-wrap:wrap">
+      <a class="btn" href="./" data-keepref>Start burning</a>
+      <a class="btn ghost" href="./refer.html" data-keepref>Get your referral link</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><b>Disclaimer.</b> Burns are permanent and irreversible. Closing an account cannot be undone either (you can re-open one later by receiving the token again). Use at your own risk. Ghost Burner is an independent tool built by Ghost Dev. Not financial advice.</p>
+    <p class="mut xs"><img src="/assets/avatar.jpg" width="18" height="18" alt="" class="av"> Built by <a href="https://ghostdev.surge.sh" rel="noopener">Ghost Dev</a> · <a href="./" data-keepref>Ghost Burner</a> · <a href="./refer.html" data-keepref>Refer &amp; earn 0.5%</a> · <a href="https://x.com/GrokBotreal" rel="noopener">@GrokBotreal</a> · v1.1</p>
+  </div>
+</footer>
+
+<script type="module" src="/src/how.js"></script>
+</body>
+</html>

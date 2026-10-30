@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src https: wss:; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Refer &amp; earn · Ghost Burner</title>
+<meta name="description" content="Share your Ghost Burner link and earn 0.5% of the SOL your friends reclaim, paid instantly on-chain inside their burn transaction.">
+<meta name="theme-color" content="#050807">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ghost Burner">
+<meta name="application-name" content="Ghost Burner">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="./" data-keepref aria-label="Ghost Burner home"><img src="/assets/logo.svg" width="30" height="30" alt=""> GHOST<b>BURNER</b></a>
+    <div class="ptabs" role="navigation" aria-label="Pages">
+      <a class="ptab" data-keepref href="./">Home</a>
+      <a class="ptab on" aria-current="page" data-keepref href="./refer.html">Refer</a>
+      <a class="ptab" data-keepref href="./how.html">How it works</a>
+      <details class="more">
+        <summary class="ptab" aria-label="More Ghost projects">More</summary>
+        <div class="menu">
+          <a href="https://ghostlinks.surge.sh" target="_blank" rel="noopener"><b>Ghost Links</b><small>ghostlinks.surge.sh</small></a>
+          <a href="https://ghostscreener.surge.sh" target="_blank" rel="noopener"><b>Ghost Screener</b><small>ghostscreener.surge.sh</small></a>
+          <a href="https://ghostmarkets.surge.sh" target="_blank" rel="noopener"><b>Ghost Markets</b><small>ghostmarkets.surge.sh</small></a>
+          <a href="https://ghostdev.surge.sh" target="_blank" rel="noopener"><b>$GHOSTDEV</b><small>ghostdev.surge.sh</small></a>
+          <a href="https://x.com/GrokBotreal" target="_blank" rel="noopener"><b>X</b><small>@GrokBotreal</small></a>
+        </div>
+      </details>
+    </div>
+    <div class="navr">
+      <div class="seg" role="group" aria-label="Network">
+        <button type="button" data-cluster="mainnet-beta">Mainnet</button>
+        <button type="button" data-cluster="devnet">Devnet</button>
+      </div>
+      <button type="button" class="btn" id="connectBtn">Connect wallet</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="rf-hero">
+    <div>
+      <p class="kicker">// referral program</p>
+      <h1>Share Ghost Burner.<br><span>Earn 0.5% of every reclaim.</span></h1>
+      <p class="lead">When someone burns through your link, 0.5% of the SOL rent they reclaim goes straight to your wallet, paid on-chain inside their own burn transaction. No claiming, no dashboard balance, no waiting.</p>
+      <ul class="facts">
+        <li><b>They pay nothing extra.</b> The fee is 2% either way. Your 0.5% comes out of the treasury's share.</li>
+        <li><b>Paid instantly.</b> A normal SOL transfer to you, in the same transaction that refunds their rent.</li>
+        <li><b>First link wins for 30 days.</b> The first valid link someone opens is remembered in their browser for 30 days.</li>
+      </ul>
+    </div>
+    <div class="card" id="linkCard">
+      <h2>Your referral link</h2>
+      <div id="linkBody">
+        <p class="mut">Connect the wallet you want to be paid in. Your link is just this site with <code>?ref=</code> and your address.</p>
+        <button type="button" class="btn big" id="heroConnect">Connect wallet</button>
+        <div class="nowallet" id="noWallet" hidden>
+          <p><b>No wallet found in this browser.</b> <span id="noWalletWhy">On iPhone and Android, wallets only connect inside their own app browser.</span></p>
+          <div class="deeplinks" id="deepLinks"></div>
+        </div>
+      </div>
+      <details class="mut xs" style="margin-top:12px"><summary>Or enter an address</summary>
+        <div class="linkbox"><input id="addrInput" placeholder="Solana wallet address" autocomplete="off" spellcheck="false"><button type="button" class="btn ghost" id="addrGo">Use</button></div>
+        <p class="xs" id="addrErr"></p>
+      </details>
+    </div>
+  </section>
+
+  <div class="rf-grid">
+    <section class="card">
+      <h2>How it works</h2>
+      <div class="howto" style="box-shadow:none;border:0;background:none;padding:0">
+        <div class="step"><i>1</i><div><b>Share your link</b><span>Post it on X, in your group chat, anywhere. It looks like <code>ghostburner.surge.sh/?ref=YourWallet</code>.</span></div></div>
+        <div class="step"><i>2</i><div><b>They burn</b><span>They close empty token accounts or burn junk and get their rent SOL back.</span></div></div>
+        <div class="step"><i>3</i><div><b>You get paid</b><span>0.5% of the SOL they reclaim lands in your wallet in the same transaction.</span></div></div>
+      </div>
+    </section>
+    <section class="card">
+      <h2>Where the 2% fee goes</h2>
+      <div class="split">
+        <div><span>Without a referral link</span><span>1% $GHOSTDEV treasury · 1% BOBO buy</span></div>
+        <div><span>With your link</span><span>0.5% treasury · <b>0.5% you</b> · 1% BOBO buy</span></div>
+      </div>
+      <p class="mut xs">Example: closing 10 empty accounts reclaims about 0.0204 SOL, so you earn about 0.000102 SOL. Solana won't create a brand-new wallet with less than about 0.00065 SOL, so if your wallet has never held SOL, small payouts go to the treasury instead until it does. Keep a little SOL in it. Your own wallet and the fee wallets can't be referrers.</p>
+    </section>
+  </div>
+
+  <section class="card" id="statsCard" hidden>
+    <h2>Your referral earnings <small id="statsAddr"></small></h2>
+    <div class="stats">
+      <div><span>Earned (est.)</span><b id="stTotal">–</b></div>
+      <div><span>Paid burns</span><b id="stCount">–</b></div>
+      <div><span>Wallets referred</span><b id="stBurners">–</b></div>
+    </div>
+    <p class="mut xs" id="statsNote"></p>
+    <div class="reftx" id="statsList"></div>
+    <div class="row"><button type="button" class="btn ghost" id="statsBtn">Rescan chain</button></div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><b>Fine print.</b> Referral payouts are plain SOL transfers inside burns made through your link, so they only happen when someone actually burns. Earnings shown here are an estimate read from your recent on-chain transactions, not a ledger. Self-referrals and fee-wallet referrals are ignored. Ghost Burner is an independent tool built by Ghost Dev. Not financial advice.</p>
+    <p class="mut xs"><img src="/assets/avatar.jpg" width="18" height="18" alt="" class="av"> Built by <a href="https://ghostdev.surge.sh" rel="noopener">Ghost Dev</a> · <a href="./" data-keepref>Ghost Burner</a> · <a href="./how.html" data-keepref>How it works</a> · <a href="https://x.com/GrokBotreal" rel="noopener">@GrokBotreal</a> · v1.1</p>
+  </div>
+</footer>
+
+<dialog id="walletDlg" class="dlg">
+  <div class="dlg-h"><b>Connect a wallet</b><button type="button" class="x" data-close>×</button></div>
+  <div id="walletList" class="walletlist"></div>
+  <p class="mut xs">Connecting only reads your address to build your link. Nothing is signed on this page. Ghost Burner never asks for a seed phrase or private key.</p>
+</dialog>
+
+<script type="module" src="/src/refer.js"></script>
+</body>
+</html>
