@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src https: wss:; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at 'sha256-3GYFfuM4uNQJC1fBuC8xbfCH443JGAB1oef5UAP/4WE='; style-src 'self'; img-src 'self' https: data: https://ghostdev.goatcounter.com; connect-src https: wss: https://ghostdev.goatcounter.com; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <title>Refer &amp; earn · Ghost Burner</title>
 <meta name="description" content="Share your Ghost Burner link and earn 0.5% of the SOL your friends reclaim, paid instantly on-chain inside their burn transaction.">
@@ -121,5 +121,7 @@
 </dialog>
 
 <script type="module" src="/src/refer.js"></script>
+<script>window.goatcounter={path:function(p){return location.host+p}}</script>
+<script data-goatcounter="https://ghostdev.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
