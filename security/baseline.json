@@ -1,0 +1,341 @@
+{
+ "checks": {
+  "bundle_match": true,
+  "bundle_mismatched": [],
+  "bundle_missing_live": [],
+  "fee_config_addresses": [
+   "AgKx7ZTkRB13j2Ai5g1pLeUVoxdGbKbRVn4HGJrzr4C2",
+   "E3MnPuZXY52cisZj5p47x2seZn2kR1JzVs125mvSMkAY"
+  ],
+  "fee_config_ok": true,
+  "headers": {
+   "content-security-policy": false,
+   "cross-origin-opener-policy": false,
+   "permissions-policy": false,
+   "referrer-policy": false,
+   "strict-transport-security": false,
+   "x-content-type-options": false,
+   "x-frame-options": false
+  },
+  "local_tree_sha256": "9ec20d15886bc535ed7a7c883fd26eb41228af7084426c8de4dfdc2198d2c4c1",
+  "meta": {
+   "csp_meta": true,
+   "frame_bust_guard": true,
+   "https_redirect": "unverified (box egress blocks plain HTTP)",
+   "referrer_meta": true
+  },
+  "noted_addresses": {},
+  "unknown_32byte_strings": []
+ },
+ "counts": {
+  "live-headers": {
+   "low": 6,
+   "medium": 1
+  },
+  "npm-audit-all": {
+   "high": 4,
+   "medium": 7
+  },
+  "npm-audit-prod": {
+   "high": 3,
+   "medium": 6
+  },
+  "osv-scanner": {
+   "high": 3,
+   "low": 1,
+   "medium": 10
+  }
+ },
+ "date": "2026-11-05",
+ "errors": [],
+ "findings": [
+  {
+   "fix": null,
+   "id": "missing-header:content-security-policy",
+   "severity": "low",
+   "title": "HTTP header content-security-policy not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:cross-origin-opener-policy",
+   "severity": "low",
+   "title": "HTTP header cross-origin-opener-policy not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:permissions-policy",
+   "severity": "low",
+   "title": "HTTP header permissions-policy not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:referrer-policy",
+   "severity": "low",
+   "title": "HTTP header referrer-policy not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:strict-transport-security",
+   "severity": "medium",
+   "title": "HTTP header strict-transport-security not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:x-content-type-options",
+   "severity": "low",
+   "title": "HTTP header x-content-type-options not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": null,
+   "id": "missing-header:x-frame-options",
+   "severity": "low",
+   "title": "HTTP header x-frame-options not sent by host (Surge)",
+   "tool": "live-headers"
+  },
+  {
+   "fix": true,
+   "id": "@solana/buffer-layout-utils:via:@solana/web3.js,bigint-buffer",
+   "severity": "high",
+   "title": "@solana/buffer-layout-utils *",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token-group:via:@solana/web3.js",
+   "severity": "medium",
+   "title": "@solana/spl-token-group *",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token-metadata:via:@solana/web3.js",
+   "severity": "medium",
+   "title": "@solana/spl-token-metadata *",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token:via:@solana/buffer-layout-utils,@solana/spl-token-group,@solana/spl-token-metadata,@solana/web3.js",
+   "severity": "high",
+   "title": "@solana/spl-token *",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "@solana/web3.js:via:jayson",
+   "severity": "medium",
+   "title": "@solana/web3.js <=0.0.0-pr-29130 || 0.0.4 - 1.99.0",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "bigint-buffer:GHSA-3gc7-fjrx-p6mg",
+   "severity": "high",
+   "title": "bigint-buffer *",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "esbuild:GHSA-67mh-4wv8-2f99",
+   "severity": "medium",
+   "title": "esbuild <=0.24.2",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "jayson:via:stream-json,uuid",
+   "severity": "medium",
+   "title": "jayson 2.0.6 - 4.3.0",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "stream-json:GHSA-528h-pc64-c93x+GHSA-hqr4-qq8f-hg3x+GHSA-mjw6-4jj6-33hc",
+   "severity": "medium",
+   "title": "stream-json <=3.5.0",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "uuid:GHSA-w5hq-g745-h8pq",
+   "severity": "medium",
+   "title": "uuid <11.1.1",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "vite:GHSA-4w7w-66w2-5vf9+GHSA-587h-7wmj-h5pm+GHSA-698v-4r3x-3vcv+GHSA-9jrq-w75r-8gcw+GHSA-fx2h-pf6j-xcff+GHSA-r825-w8mm-5pxw+GHSA-rq7h-c2jc-7f22+GHSA-v6wh-96g9-6wx3",
+   "severity": "high",
+   "title": "vite <=6.4.3",
+   "tool": "npm-audit-all"
+  },
+  {
+   "fix": true,
+   "id": "@solana/buffer-layout-utils:via:@solana/web3.js,bigint-buffer",
+   "severity": "high",
+   "title": "@solana/buffer-layout-utils *",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token-group:via:@solana/web3.js",
+   "severity": "medium",
+   "title": "@solana/spl-token-group *",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token-metadata:via:@solana/web3.js",
+   "severity": "medium",
+   "title": "@solana/spl-token-metadata *",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "@solana/spl-token:via:@solana/buffer-layout-utils,@solana/spl-token-group,@solana/spl-token-metadata,@solana/web3.js",
+   "severity": "high",
+   "title": "@solana/spl-token *",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "@solana/web3.js:via:jayson",
+   "severity": "medium",
+   "title": "@solana/web3.js <=0.0.0-pr-29130 || 0.0.4 - 1.99.0",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "bigint-buffer:GHSA-3gc7-fjrx-p6mg",
+   "severity": "high",
+   "title": "bigint-buffer *",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "jayson:via:stream-json,uuid",
+   "severity": "medium",
+   "title": "jayson 2.0.6 - 4.3.0",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "stream-json:GHSA-528h-pc64-c93x+GHSA-hqr4-qq8f-hg3x+GHSA-mjw6-4jj6-33hc",
+   "severity": "medium",
+   "title": "stream-json <=3.5.0",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": true,
+   "id": "uuid:GHSA-w5hq-g745-h8pq",
+   "severity": "medium",
+   "title": "uuid <11.1.1",
+   "tool": "npm-audit-prod"
+  },
+  {
+   "fix": null,
+   "id": "bigint-buffer@1.1.5:GHSA-3gc7-fjrx-p6mg",
+   "severity": "high",
+   "title": "bigint-buffer 1.1.5 (CVSS 7.7)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "esbuild@0.21.5:GHSA-67mh-4wv8-2f99",
+   "severity": "medium",
+   "title": "esbuild 0.21.5 (CVSS 5.3)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "stream-json@1.9.1:GHSA-528h-pc64-c93x",
+   "severity": "medium",
+   "title": "stream-json 1.9.1 (CVSS 6.2)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "stream-json@1.9.1:GHSA-hqr4-qq8f-hg3x",
+   "severity": "medium",
+   "title": "stream-json 1.9.1 (CVSS 6.2)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "stream-json@1.9.1:GHSA-mjw6-4jj6-33hc",
+   "severity": "medium",
+   "title": "stream-json 1.9.1 (CVSS 5.1)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "uuid@8.3.2:GHSA-w5hq-g745-h8pq",
+   "severity": "high",
+   "title": "uuid 8.3.2 (CVSS 7.5)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-4w7w-66w2-5vf9",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 6.3)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-587h-7wmj-h5pm",
+   "severity": "high",
+   "title": "vite 5.4.21 (CVSS 7.5)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-698v-4r3x-3vcv",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 6.3)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-9jrq-w75r-8gcw",
+   "severity": "low",
+   "title": "vite 5.4.21 (CVSS 2.1)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-fx2h-pf6j-xcff",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 6.9)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-r825-w8mm-5pxw",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 6.3)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-rq7h-c2jc-7f22",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 6.3)",
+   "tool": "osv-scanner"
+  },
+  {
+   "fix": null,
+   "id": "vite@5.4.21:GHSA-v6wh-96g9-6wx3",
+   "severity": "medium",
+   "title": "vite 5.4.21 (CVSS 5.5)",
+   "tool": "osv-scanner"
+  }
+ ],
+ "schema": 1
+}

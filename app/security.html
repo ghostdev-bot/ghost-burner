@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style id="fb-guard">html{display:none!important}</style>
+<script>(function(){if(window.top===window.self){var s=document.getElementById('fb-guard');if(s)s.parentNode.removeChild(s);}else{try{window.top.location.replace(window.self.location.href);}catch(e){}}})();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://gc.zgo.at 'sha256-3GYFfuM4uNQJC1fBuC8xbfCH443JGAB1oef5UAP/4WE=' 'sha256-BWr4Dagc80GswU4DnNKqicEp8YjVarYvwQb9MMryLgk='; style-src 'self' 'sha256-Gu7H6yQeElEGEhtaJWUnU8wJfuZQiNi6YYLWWZK0PUM='; img-src 'self' https: data: https://ghostdev.goatcounter.com; connect-src 'self' https: wss://mainnet.helius-rpc.com wss://solana-rpc.publicnode.com wss://rpc.solanatracker.io wss://api.mainnet-beta.solana.com wss://api.devnet.solana.com; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="referrer" content="no-referrer">
+<title>Security · Ghost Burner</title>
+<meta name="description" content="Plain-English security notes for Ghost Burner: what a transaction contains, where the 2% fee goes, what we never ask for, and the free scans we run daily.">
+<meta name="theme-color" content="#050807">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Ghost Burner">
+<meta name="application-name" content="Ghost Burner">
+</head>
+<body>
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="./" data-keepref aria-label="Ghost Burner home"><img src="/assets/logo.svg" width="30" height="30" alt=""> GHOST<b>BURNER</b></a>
+    <div class="ptabs" role="navigation" aria-label="Pages">
+      <a class="ptab" data-keepref href="./">Home</a>
+      <a class="ptab" data-keepref href="./refer.html">Refer</a>
+      <a class="ptab" data-keepref href="./how.html">How it works</a>
+      <details class="more">
+        <summary class="ptab" aria-label="More Ghost projects">More</summary>
+        <div class="menu">
+          <a href="./security.html" data-keepref aria-current="page"><b>Security</b><small>how it keeps you safe</small></a>
+          <a href="https://ghostlinks.surge.sh" target="_blank" rel="noopener"><b>Ghost Links</b><small>ghostlinks.surge.sh</small></a>
+          <a href="https://ghostscreener.surge.sh" target="_blank" rel="noopener"><b>Ghost Screener</b><small>ghostscreener.surge.sh</small></a>
+          <a href="https://ghostmarkets.surge.sh" target="_blank" rel="noopener"><b>Ghost Markets</b><small>ghostmarkets.surge.sh</small></a>
+          <a href="https://ghostdev.surge.sh" target="_blank" rel="noopener"><b>$GHOSTDEV</b><small>ghostdev.surge.sh</small></a>
+          <a href="https://x.com/GrokBotreal" target="_blank" rel="noopener"><b>X</b><small>@GrokBotreal</small></a>
+        </div>
+      </details>
+    </div>
+    <div class="navr">
+      <a class="btn" href="./" data-keepref>Start burning</a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section class="rf-hero">
+    <div>
+      <p class="kicker">// security</p>
+      <h1>What Ghost Burner can do with your wallet.<br><span>And what it can't.</span></h1>
+      <p class="lead">Ghost Burner is a website that builds Solana transactions in your browser and asks your wallet to sign them. There is no server holding your keys and no custom smart contract. This page lists exactly what goes into each transaction, so you can check it against what your wallet shows you.</p>
+      <ul class="facts">
+        <li><b>No seed phrase, ever.</b> Ghost Burner never asks for your seed phrase or private key. If any page does, it is a scam.</li>
+        <li><b>No token approvals.</b> It never asks for an approval, a delegate or any authority over your tokens.</li>
+        <li><b>Only what you select.</b> It closes or burns only the accounts you ticked on the review screen.</li>
+        <li><b>Simulated before you sign.</b> Every transaction is run as a simulation first, and the app checks every instruction in it.</li>
+      </ul>
+    </div>
+    <div class="howto">
+      <div class="step"><i>!</i><div><b>Not audited</b><span>Ghost Burner has <strong>not</strong> had a paid third-party security audit. What we do have is listed below: free automated scans, run daily, and a review of the code that builds transactions.</span></div></div>
+      <div class="step"><i>🔥</i><div><b>Burns are permanent</b><span>A burned token or NFT is destroyed for good. Nobody, including us, can bring it back.</span></div></div>
+      <div class="step"><i>✓</i><div><b>Read the wallet popup</b><span>Your wallet's approval screen is the final word. If it shows something you don't expect, reject it.</span></div></div>
+    </div>
+  </section>
+
+  <div class="rf-grid">
+    <section class="card">
+      <h2>What Ghost Burner does</h2>
+      <ul class="facts sec-facts">
+        <li><b>Reads</b> your public token accounts from the Solana chain (no signature needed).</li>
+        <li><b>Closes</b> empty token accounts you select, refunding their rent to your wallet.</li>
+        <li><b>Burns</b> tokens or standard NFTs only if you tick them yourself, then closes the account and refunds the rent to you.</li>
+        <li><b>Charges</b> 2% of the SOL rent you get back, as plain SOL transfers inside the same transaction.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>What it doesn't do</h2>
+      <ul class="facts sec-facts">
+        <li><b>No custody.</b> It never holds your SOL, tokens or keys, and there is no backend server.</li>
+        <li><b>No transfers of your tokens.</b> Tokens are never sent to anyone. They are burned (destroyed) or left alone.</li>
+        <li><b>No approvals or authority changes.</b> No Approve, no delegate, no SetAuthority, no change of owner.</li>
+        <li><b>No fee on token value.</b> The fee is taken only from rent you reclaim, never from your tokens.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="card" id="instructions">
+    <h2>Exactly what a transaction contains</h2>
+    <p class="mut">Each transaction has you as the only signer and fee payer, and only these instructions:</p>
+    <div class="split">
+      <div><span>Compute Budget: set compute unit limit and price</span><span>Solana network fee settings</span></div>
+      <div><span>SPL Token or Token-2022: <b>CloseAccount</b></span><span>closes an account you selected, rent goes to you</span></div>
+      <div><span>SPL Token or Token-2022: <b>BurnChecked</b></span><span>only for tokens you ticked; burns that account's balance</span></div>
+      <div><span>Metaplex Token Metadata: <b>Burn (V1)</b></span><span>only for standard NFTs you ticked; rent goes to you</span></div>
+      <div><span>System Program: <b>Transfer</b></span><span>the fee, from your wallet to the fee wallets below</span></div>
+    </div>
+    <p class="mut xs">Programs: Token <a href="https://solscan.io/account/TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA" target="_blank" rel="noopener"><code>TokenkegQ…VQ5DA</code></a> · Token-2022 <a href="https://solscan.io/account/TokenzQdBNbLqP5VEhdkAS6EPFLC1PHnBqCXEpPxuEb" target="_blank" rel="noopener"><code>TokenzQd…PxuEb</code></a> · Token Metadata <a href="https://solscan.io/account/metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s" target="_blank" rel="noopener"><code>metaqbxx…18x1s</code></a> · System <a href="https://solscan.io/account/11111111111111111111111111111111" target="_blank" rel="noopener"><code>1111…1111</code></a> · Compute Budget <a href="https://solscan.io/account/ComputeBudget111111111111111111111111111111" target="_blank" rel="noopener"><code>ComputeBudget1…</code></a></p>
+    <p class="mut xs">Before the review screen appears, the app checks every instruction against this list and stops if it finds anything else, if a token instruction touches an account you didn't select, or if a fee transfer is larger than shown. After your wallet signs, it checks again that nothing was added before sending. You can compare all of this with the instructions your wallet lists, and with the transaction on an explorer afterwards.</p>
+  </section>
+
+  <section class="card" id="fees">
+    <h2>Where the 2% fee goes</h2>
+    <div class="split">
+      <div><span>Without a referral link</span><span>1% $GHOSTDEV treasury · 1% BOBO buy</span></div>
+      <div><span>With a referral link</span><span>0.5% treasury · 0.5% referrer · 1% BOBO buy</span></div>
+      <div><span>$GHOSTDEV treasury</span><span><a href="https://solscan.io/account/E3MnPuZXY52cisZj5p47x2seZn2kR1JzVs125mvSMkAY" target="_blank" rel="noopener"><code>E3MnPuZXY52cisZj5p47x2seZn2kR1JzVs125mvSMkAY</code></a></span></div>
+      <div><span>BOBO buy wallet</span><span><a href="https://solscan.io/account/AgKx7ZTkRB13j2Ai5g1pLeUVoxdGbKbRVn4HGJrzr4C2" target="_blank" rel="noopener"><code>AgKx7ZTkRB13j2Ai5g1pLeUVoxdGbKbRVn4HGJrzr4C2</code></a></span></div>
+    </div>
+    <p class="mut xs">These are the only fee wallets built into the site. With a referral link, the third transfer goes to the referrer's wallet, which is shown on the burn screen before you sign. The fee is 2% of the SOL rent you reclaim, rounded down, and never more: the code refuses to load a configuration above a hard cap, and checks each fee transfer against its percentage before you sign.</p>
+  </section>
+
+  <div class="rf-grid">
+    <section class="card">
+      <h2>Tips for staying safe</h2>
+      <ul class="facts sec-facts">
+        <li><b>Read the Phantom (or other wallet) popup</b> before approving. It should show SOL coming back to you, small SOL transfers to the fee wallets above, and the tokens you chose to burn. Nothing else.</li>
+        <li><b>Use a wallet that holds only what you'll burn.</b> Move valuable tokens and NFTs to another wallet first, then connect the one with the junk.</li>
+        <li><b>Check the address bar.</b> The real site is <code>ghostburner.surge.sh</code>. Copies can look identical.</li>
+        <li><b>Never type a seed phrase</b> into any website, including this one.</li>
+      </ul>
+    </section>
+    <section class="card">
+      <h2>Public source code</h2>
+      <p class="mut">The source code is public under the MIT license, including the transaction-building code (<code>app/src/core/burner.js</code>), so anyone can read it.</p>
+      <div class="row sec-row">
+        <a class="btn ghost" href="https://github.com/ghostdev-bot/ghost-burner" target="_blank" rel="noopener">View source on GitHub</a>
+      </div>
+      <p class="mut xs">Found a problem? Open an issue on GitHub or message <a href="https://x.com/GrokBotreal" rel="noopener">@GrokBotreal</a> on X. Please don't post working exploit details publicly before it's fixed.</p>
+    </section>
+  </div>
+
+  <section class="card" id="scans">
+    <h2>Free scans, run daily</h2>
+    <!--SCAN:START-->
+    <p class="scanstamp">Last scanned: Nov 5, 2026 (US Eastern)</p>
+    <ul class="scanlist">
+      <li><b>npm audit</b> (libraries shipped in the site): 5 known advisories (1 high, 4 moderate) in bigint-buffer, stream-json, uuid.</li>
+      <li><b>OSV-Scanner</b> (every package in the lockfile, including build tools): 14 advisories (3 high, 10 medium, 1 low) in bigint-buffer, esbuild, stream-json, uuid, vite.</li>
+      <li><b>Semgrep</b> (JavaScript, security-audit, secrets and XSS rule packs): 0 findings in 19 source files.</li>
+      <li><b>gitleaks</b> (leaked keys or passwords in the public code and its history): 0 leaks found.</li>
+      <li><b>Live site check</b>: files served match our build: yes. Only fee wallets in the code are the two above: yes. Content-Security-Policy set in each page: yes. Extra security headers sent by the host: not available on our free host (Surge), so the page uses meta tags and a frame-busting guard instead.</li>
+      <li><b>Manual review</b> of the transaction-building code (Nov 4, 2026): it only emits the instructions listed above, only for accounts you select, with the fee capped and checked; no approvals, authority changes or token transfers.</li>
+    </ul>
+    <p class="mut xs">Our read of the library advisories: they all come through Solana's official JavaScript libraries (@solana/web3.js 1.x and @solana/spl-token) or the Vite build tool, and fixing them needs a major upgrade of those libraries that hasn't been done yet. The Vite/esbuild ones affect the developer's build machine, not the site you load. In the browser, bigint-buffer runs its plain-JavaScript version, the uuid issue is in functions the site doesn't use, and stream-json isn't included in the site at all.</p>
+    <!--SCAN:END-->
+    <p class="mut xs">These are free automated tools plus our own code review. They catch known problems; they can't prove the code is bug-free, and they are not a substitute for a professional audit.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="disc"><b>Disclaimer.</b> Burns are permanent and irreversible. Ghost Burner has not been audited by a third party. Use at your own risk and only with tokens you are sure you want to destroy. Ghost Burner is an independent tool built by Ghost Dev. Not financial advice.</p>
+    <p class="mut xs"><img src="/assets/avatar.jpg" width="18" height="18" alt="" class="av"> Built by <a href="https://ghostdev.surge.sh" rel="noopener">Ghost Dev</a> · <a href="./" data-keepref>Ghost Burner</a> · <a href="./how.html" data-keepref>How it works</a> · <a href="./refer.html" data-keepref>Refer &amp; earn 0.5%</a> · <a href="https://x.com/GrokBotreal" rel="noopener">@GrokBotreal</a> · v1.1</p>
+  </div>
+</footer>
+
+<script type="module" src="/src/how.js"></script>
+<script>window.goatcounter={path:function(p){return location.host+p}}</script>
+<script data-goatcounter="https://ghostdev.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

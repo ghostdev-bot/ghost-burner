@@ -40,6 +40,11 @@ Note: any RPC key passed in a `VITE_` variable ends up in the shipped JavaScript
 - `src/wallet.js`: Wallet Standard connection
 - `sw.template.js` + `vite.config.js`: installable PWA with a versioned service worker
 
+## Security
+Plain-English security notes, the exact instructions each transaction contains, and the daily free scan results: https://ghostburner.surge.sh/security.html
+
+Ghost Burner has **not** had a paid third-party audit. `security/` holds the free scan scripts (npm audit, OSV-Scanner, Semgrep, gitleaks, live bundle and fee-address checks) and the current baseline.
+
 ## Disclaimer
 Burning is irreversible. The app warns about tokens with value, but you are responsible for what you select. Not financial advice.
 
